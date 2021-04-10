@@ -24,7 +24,7 @@ Appstate
      ...                SiteLogin
      Run Keyword If     '${state}' == 'userlogin'
      ...                UserLogin
-     SiteLogin
+SiteLogin
     Setup Browser
     HotKey                          ctrl    shift    N
     QWeb.SwitchWindow               NEW
