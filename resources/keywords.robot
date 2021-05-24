@@ -22,12 +22,11 @@ Appstate
      ${state}=          Convert To Lowercase    ${state}
      Run Keyword If     '${state}' == 'sitelogin'
      ...                SiteLogin
-     Run Keyword If     '${state}' == 'userlogin'
-     ...                UserLogin
+     Run Keyword If     '${state}' == 'adminuserlogin'
+     ...                AdminUserLogin
 SiteLogin
     Setup Browser
-    HotKey                          ctrl    shift    N
-    SwitchWindow               NEW
+    
     GoTo                       ${Site_Base_URL}
     TypeText                   DefaultUserLogin_Login        ${site_login}
     TypeSecret                 DefaultUserLogin_Password     ${site_pass}
@@ -37,9 +36,9 @@ SiteLogin
     VerifyNoText               Your e-mail/password combination is incorrect. Please try again.
     ClickText                  Log In        
 
-UserLogin 
+AdminUserLogin 
     [Arguments]                   ${user_login}    ${user_pass}
-    Appstate                 SiteLogin
+    
     ClickText                Login
     TypeText                 ShopLoginForm_Login        ${user_login}
     TypeSecret               ShopLoginForm_Password     ${user_pass}
@@ -48,4 +47,4 @@ UserLogin
     VerifyNoText             Please enter a valid e-mail address.
     VerifyNoText             Your e-mail/password combination is incorrect. Please try again.
     ClickText                SIGN IN
-    VerifyText               Welcome back!  
+    VerifyText               Welcome back!   
