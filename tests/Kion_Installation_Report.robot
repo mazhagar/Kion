@@ -8,4 +8,4 @@ User and Admin Login
     [Documentation]                            Login to User and Admin account
     [Tags]                                     Admin    User
     UserLogin
-    AdminLogin
+    SiteLogin
